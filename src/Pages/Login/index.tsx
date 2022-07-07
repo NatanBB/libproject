@@ -7,7 +7,7 @@ export default function Login() {
   return (
     <div className="logon-container">
       <section className="form">
-        <img src="https://img.freepik.com/vetores-premium/livros-e-pessoas-lendo-publicacoes-decoracao-isolada_87689-1401.jpg?w=900" alt="icon" className="iconLogin" />
+        <img src="https://i.imgur.com/dOF75ol.png" alt="icon" className="iconLogin" />
         <form onSubmit={e => e}>
           <h1>Faça seu login</h1>
 
@@ -27,7 +27,7 @@ export default function Login() {
         </form>
 
       </section>
-      <img src={"https://img.freepik.com/vetores-gratis/livraria-com-variedade-de-livros-e-publicacoes_87689-4225.jpg?w=2000"} alt="Library" />
+      <img src={"https://i.imgur.com/77GkPUV.png"} alt="Library" />
     </div>
   )
 }
