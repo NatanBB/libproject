@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './Pages/Home';
 
 import Login from './Pages/Login';
+import Marketplace from './Pages/Marketplace';
 import Registration from './Pages/Registration';
 
 export default function RoutesApp() {
@@ -12,6 +13,7 @@ export default function RoutesApp() {
         <Route path="/" element={<Login />} />
         <Route path="/home" element={<Home />}/>
         <Route path="/registration" element={<Registration />} />
+        <Route path="/marketplace" element={<Marketplace />}/>
       </Routes>
     </BrowserRouter>
   )

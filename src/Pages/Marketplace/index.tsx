@@ -1,32 +1,27 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { FiPower, FiTrash2 } from 'react-icons/fi';
+import { FiInbox, FiShoppingCart, FiTrash2 } from 'react-icons/fi';
 
-import './styles.css';
-
-export default function Home() {
-
+export default function Marketplace() {
   const history = useNavigate();
 
-  const handleLogout = () => {
-    history("/")
+  const cartList = () => {
+    history("/cart")
   }
 
   return (
     <div className="profile-container">
       <header>
-        <img src={"https://i.imgur.com/dOF75ol.png"} alt="livrary" className="icon"/>
+        <img src={"https://i.imgur.com/dOF75ol.png"} alt="livrary" className="icon" />
         <span>Bem vindo, Natan!</span>
 
-        <Link className="button" to="/marketplace" style={{marginLeft: "80px"}}>Ir ao Marketplace</Link>
-        <Link className="button" to="/registration">Cadastrar novo livro</Link>
-        <button onClick={handleLogout} type="button">
-          <FiPower size={18} color="#E02041" />
+        <Link className="" to=""></Link>
+        <button onClick={cartList} type="button">
+          <FiShoppingCart size={18} color="black" />
         </button>
       </header>
 
-      <h1>Livros cadastrados</h1>
-
+      <h1>Adicionar ao carrinho</h1>
       <ul>
         <li key={1}>
           <strong>LIVRO:</strong>
@@ -39,7 +34,7 @@ export default function Home() {
           <p>{Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(25)}</p>
 
           <button onClick={e => e} type="button">
-            <FiTrash2 size={20} color="#a8a8b3" />
+            <Link className="buttonCart" to="">+ Carrinho</Link>
           </button>
         </li>
         <li key={1}>
@@ -53,7 +48,7 @@ export default function Home() {
           <p>{Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(48)}</p>
 
           <button onClick={e => e} type="button">
-            <FiTrash2 size={20} color="#a8a8b3" />
+            <Link className="buttonCart" to="">+ Carrinho</Link>
           </button>
         </li>
         <li key={1}>
@@ -67,7 +62,7 @@ export default function Home() {
           <p>{Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(59)}</p>
 
           <button onClick={e => e} type="button">
-            <FiTrash2 size={20} color="#a8a8b3" />
+            <Link className="buttonCart" to="">+ Carrinho</Link>
           </button>
         </li>
         <li key={1}>
@@ -81,7 +76,7 @@ export default function Home() {
           <p>{Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(87.9)}</p>
 
           <button onClick={e => e} type="button">
-            <FiTrash2 size={20} color="#a8a8b3" />
+            <Link className="buttonCart" to="">+ Carrinho</Link>
           </button>
         </li>
         <li key={1}>
@@ -95,10 +90,10 @@ export default function Home() {
           <p>{Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(35.5)}</p>
 
           <button onClick={e => e} type="button">
-            <FiTrash2 size={20} color="#a8a8b3" />
+            <Link className="buttonCart" to="">+ Carrinho</Link>
           </button>
         </li>
       </ul>
     </div>
-  );
+  )
 }
