@@ -1,0 +1,22 @@
+{
+  "books": [
+    {
+      "id": 2,
+      "title": "A arte da guerra",
+      "description": "Lorem ipsum auctor primis aenean dolor ligula vestibulum, sem at luctus sodales eros nostra inceptos feugiat, euismod sodales lacus posuere lobortis morbi. convallis aenean curae semper donec ultricies interdum conubia auctor massa ut, volutpat suspendisse felis vivamus at hendrerit",
+      "price": 80
+    },
+    {
+      "id": 3,
+      "title": "A volta dos que não foram",
+      "description": "Interdum posuere enim donec nunc lacinia lobortis, volutpat leo blandit libero per euismod dictumst, nullam ullamcorper etiam aliquam molestie. sit nunc mi donec eleifend neque ac risus, inceptos ultricies metus conubia suscipit ad augue non, ad nisi risus vehicula tincidunt odio",
+      "price": 99
+    },
+    {
+      "id": 4,
+      "title": "Poeira em alto mar",
+      "description": "Nam pellentesque curae phasellus conubia sed ipsum, lacinia dictumst laoreet nam dictum ut, urna hendrerit pulvinar quisque mauris. ipsum mollis curabitur sodales malesuada quisque ultricies felis nullam dolor leo, fringilla vehicula rhoncus vestibulum augue aptent commodo viverra eu curabitur tincidunt, tortor ad nibh semper luctus leo massa habitant mollis",
+      "price": 39.9
+    }
+  ]
+}
