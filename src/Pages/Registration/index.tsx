@@ -1,10 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi'
 
 import './styles.css';
+import { api } from '../../services/api';
 
 export default function Registration() {
+  const [title, setTitle] = useState<any>();
+  const [description, setDescription] = useState<any>();
+  const [value, setValue] = useState<any>();
+
+  const id = Math.floor(Math.random() * 65536);
+
+  const handleSubmit = async () => {
+    const preparedData = {
+      id: id,
+      title: title,
+      description: description,
+      price: value
+    }
+    api.post('books', preparedData)
+  }
 
   return (
     <div className="new-incident-container">
@@ -24,21 +40,21 @@ export default function Registration() {
         <form onSubmit={e => e}>
           <input
             placeholder="Título do livro"
-          // value={title}
-          // onChange= { e => setTitle(e.target.value)}
+            value={title}
+            onChange={e => setTitle(e.target.value)}
           />
           <textarea
             placeholder="Descrição"
-          // value={description}
-          // onChange= { e => setDescription(e.target.value)}
+            value={description}
+            onChange={e => setDescription(e.target.value)}
           />
           <input
             placeholder="Valor em reais"
-          // value={value}
-          // onChange= {e => setValue(e.target.value)}
+            value={value}
+            onChange={e => setValue(e.target.value)}
           />
 
-          <button className="button" type="submit">Cadastrar</button>
+          <button className="button" onClick={handleSubmit}>Cadastrar</button>
         </form>
       </div>
     </div>

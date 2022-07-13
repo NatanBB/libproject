@@ -29,8 +29,8 @@ export default function Marketplace() {
   //#endregion
 
   //#region funcitions
-  const handleDelete = (id: number) => {
-    api.delete(`books/${id}`)
+  const handleAddCart = () => {
+    // todo
     handleData();
   }
 
@@ -61,8 +61,8 @@ export default function Marketplace() {
           <strong>VALOR:</strong>
           <p>{Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(book.price)}</p>
 
-          <button onClick={e => handleDelete(book.id)} type="button">
-            <FiTrash2 size={20} color="#a8a8b3" />
+          <button onClick={e => e} type="button">
+            <Link className="buttonCart" to="">+ Carrinho</Link>
           </button>
         </li>
         ))}

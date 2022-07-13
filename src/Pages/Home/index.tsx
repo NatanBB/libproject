@@ -7,6 +7,7 @@ import { useState } from 'react';
 import { api } from '../../services/api';
 import { useEffect } from 'react';
 import { Book } from './homeTypes';
+import {toastr} from 'react-redux-toastr'
 
 export default function Home() {
 
@@ -66,7 +67,7 @@ export default function Home() {
           <strong>VALOR:</strong>
           <p>{Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(book.price)}</p>
 
-          <button onClick={e => handleDelete(book.id)} type="button">
+          <button onClick={e => handleDelete(book.id)}>
             <FiTrash2 size={20} color="#a8a8b3" />
           </button>
         </li>
