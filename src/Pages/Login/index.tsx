@@ -1,9 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import './styles.css';
 
+function initialState() {
+  return {user: '', password: ''};
+}
+
 export default function Login() {
   //todo
+  const [values, setValues] = useState(initialState);
+
+  function onChange(event: any) {
+  const {value, name} = event.target;
+
+    setValues({
+      ...values,
+      [name]: value,
+    })
+
+  }
+
+
   return (
     <div className="logon-container">
       <section className="form">
@@ -13,17 +30,33 @@ export default function Login() {
 
           <input
             placeholder="Login"
-          // value={id}
-          // onChange={e => setID(e.target.value)}
+            id="user"
+            type="text"
+            name="user"
+            onChange={onChange}
+            value={values.user}
           />
           <input
             placeholder="Senha"
-          // value={id}
-          // onChange={e => setID(e.target.value)}
+            id="password"
+            type="password"
+            name="password"
+            onChange={onChange}
+            value={values.password}
           />
           <Link to="/home">
-            <button className="button" type="submit">Entrar</button>
+            <button 
+              className="button" 
+              type="submit"
+              onClick={(event: React.MouseEvent<HTMLElement>) => {
+                console.log(values.user, values.password)
+              }}
+            >
+              Entrar
+            </button>
           </Link>
+
+
         </form>
 
       </section>

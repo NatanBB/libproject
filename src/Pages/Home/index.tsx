@@ -7,7 +7,7 @@ import { useState } from 'react';
 import { api } from '../../services/api';
 import { useEffect } from 'react';
 import { Book } from './homeTypes';
-import {toastr} from 'react-redux-toastr'
+// import { toastr } from 'react-redux-toastr'
 
 export default function Home() {
 
