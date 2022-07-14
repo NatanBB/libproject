@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import './styles.css';
 
 function initialState() {
@@ -7,8 +7,8 @@ function initialState() {
 }
 
 export default function Login() {
-  //todo
   const [values, setValues] = useState(initialState);
+  const history = useNavigate();
 
   function onChange(event: any) {
   const {value, name} = event.target;
@@ -19,7 +19,6 @@ export default function Login() {
     })
 
   }
-
 
   return (
     <div className="logon-container">
@@ -44,21 +43,16 @@ export default function Login() {
             onChange={onChange}
             value={values.password}
           />
-          <Link to="/home">
             <button 
               className="button" 
               type="submit"
               onClick={(event: React.MouseEvent<HTMLElement>) => {
-                console.log(values.user, values.password)
+                values.user === 'admin' ? history('/home') : history('marketplace');
               }}
             >
               Entrar
             </button>
-          </Link>
-
-
         </form>
-
       </section>
       <img src={"https://i.imgur.com/77GkPUV.png"} alt="Library" />
     </div>

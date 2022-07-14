@@ -34,8 +34,8 @@ export default function Home() {
   //#endregion
 
   //#region funcitions
-  const handleDelete = (id: number) => {
-    api.delete(`books/${id}`)
+  const handleDelete = async (id: number) => {
+    await api.delete(`books/${id}`)
     handleData();
   }
   //#endregion
@@ -44,7 +44,7 @@ export default function Home() {
     <div className="profile-container">
       <header>
         <img src={"https://i.imgur.com/dOF75ol.png"} alt="livrary" className="icon"/>
-        <span>Bem vindo, Natan!</span>
+        <span>Bem vindo, Admin!</span>
 
         <Link className="button" to="/marketplace" style={{marginLeft: "80px"}}>Ir ao Marketplace</Link>
         <Link className="button" to="/registration">Cadastrar novo livro</Link>

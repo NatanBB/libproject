@@ -24,5 +24,21 @@
       "password": "user",
       "UserId": 2
     }
+  ],
+  "cart": [
+    {
+      "id": 20074,
+      "title": "A volta dos que não foram",
+      "description": "Interdum posuere enim donec nunc lacinia lobortis, volutpat leo blandit libero per euismod dictumst, nullam ullamcorper etiam aliquam molestie. sit nunc mi donec eleifend neque ac risus, inceptos ultricies metus conubia suscipit ad augue non, ad nisi risus vehicula tincidunt odio",
+      "price": "99",
+      "qtd": 5
+    },
+    {
+      "id": 33426,
+      "title": "Harry Potter",
+      "description": "Um bruxo muito bruxo",
+      "price": "99",
+      "qtd": 1
+    }
   ]
 }
