@@ -64,7 +64,7 @@ export default function Cart() {
       <>
         <header>
           <img src={"https://i.imgur.com/dOF75ol.png"} alt="livrary" className="icon" />
-          <span>Bem vindo, Natan!</span>
+          <span>Bem vindo!</span>
 
           <Link className="button" to="/marketplace">Ir ao Marketplace</Link>
           <button onClick={handleLogout} type="button">

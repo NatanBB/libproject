@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { api } from "../../services/api";
 import './styles.css';
 
 function initialState() {
@@ -19,6 +20,16 @@ export default function Login() {
     })
 
   }
+
+  const handleLogin = () => {
+    values.user === 'admin' ? history('/home') : history('marketplace');
+
+    const preparedData = {
+      username: values.user,
+    }
+    api.patch(`userLog/${1}`, preparedData)
+  }
+  
 
   return (
     <div className="logon-container">
@@ -46,9 +57,7 @@ export default function Login() {
             <button 
               className="button" 
               type="submit"
-              onClick={(event: React.MouseEvent<HTMLElement>) => {
-                values.user === 'admin' ? history('/home') : history('marketplace');
-              }}
+              onClick={handleLogin}
             >
               Entrar
             </button>

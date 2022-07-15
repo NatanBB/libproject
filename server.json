@@ -6,18 +6,26 @@
       "description": "Interdum posuere enim donec nunc lacinia lobortis, volutpat leo blandit libero per euismod dictumst, nullam ullamcorper etiam aliquam molestie. sit nunc mi donec eleifend neque ac risus, inceptos ultricies metus conubia suscipit ad augue non, ad nisi risus vehicula tincidunt odio",
       "price": "99",
       "category": "Ficção"
-    }
-  ],
-  "usuarios": [
-    {
-      "username": "admin",
-      "password": "admin",
-      "UserId": 1
     },
     {
-      "username": "user",
-      "password": "user",
-      "UserId": 2
+      "id": 21653,
+      "title": "O livro bom",
+      "description": "Interdum posuere enim donec nunc lacinia lobortis, volutpat leo blandit libero per euismod dictumst, nullam ullamcorper etiam aliquam molestie. sit nunc mi donec eleifend neque ac risus, inceptos ultricies metus conubia suscipit ad augue non, ad nisi risus vehicula tincidunt odio",
+      "price": "89.8",
+      "category": "Ação"
+    },
+    {
+      "id": 64650,
+      "title": "Amor a primeira vista",
+      "description": "Interdum posuere enim donec nunc lacinia lobortis, volutpat leo blandit libero per euismod dictumst, nullam ullamcorper etiam aliquam molestie. sit nunc mi donec eleifend neque ac risus, inceptos ultricies metus conubia suscipit ad augue non, ad nisi risus vehicula tincidunt odio",
+      "price": "78",
+      "category": "Romance"
+    }
+  ],
+  "userLog": [
+    {
+      "id": 1,
+      "username": "admin"
     }
   ],
   "cart": [
@@ -31,12 +39,20 @@
   ],
   "category": [
     {
-      "id": 1,
-      "name": "teste1"
+      "id": 41791,
+      "name": "Ação"
     },
     {
-      "id": 47707,
-      "name": "teseseses"
+      "id": 46318,
+      "name": "Comédia"
+    },
+    {
+      "id": 49224,
+      "name": "Romance"
+    },
+    {
+      "id": 26138,
+      "name": "Ficção"
     }
   ]
 }

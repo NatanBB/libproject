@@ -18,3 +18,8 @@ export type CategoryProps = {
   id: number;
   name: string;
 }
+
+export type UserProps = {
+  id: number;
+  username: string;
+}

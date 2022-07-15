@@ -13,6 +13,7 @@ export default function Home() {
 
   //#region data
   const [data, setData] = useState<Book[]>([]);
+  const [searchValue, setSearchValue] = useState('');
 
   useEffect(() => {
     handleData();
@@ -38,6 +39,19 @@ export default function Home() {
     await api.delete(`books/${id}`)
     handleData();
   }
+
+  const handleChange = (event: { target: { value: any; }; }) => {
+    const { value } = event.target;
+    setSearchValue(value);
+  }
+
+  const filter = !!searchValue ?
+    data.filter(book => {
+      return book.category.toLowerCase().includes(
+        searchValue.toLowerCase()
+      );
+    })
+    : data;
   //#endregion
 
   return (
@@ -56,26 +70,38 @@ export default function Home() {
 
       <h1>Livros cadastrados</h1>
 
+      <div className="search-container">
+        <input
+          className="text-input"
+          type="search"
+          value={searchValue}
+          onChange={handleChange}
+          placeholder="Buscar por categoria"
+        />
+      </div>
+
       <ul>
-        {data.map(book => (
-          <li key={book.id}>
-            <strong>LIVRO:</strong>
-            <p>{book.title}</p>
+        {filter.length > 0 && (
+          filter.map(book => (
+            <li key={book.id}>
+              <strong>LIVRO:</strong>
+              <p>{book.title}</p>
 
-            <strong>DESCRIÇÃO:</strong>
-            <p>{book.description}</p>
+              <strong>DESCRIÇÃO:</strong>
+              <p>{book.description}</p>
 
-            <strong>CATEGORIA:</strong>
-            <p>{book.category}</p>
+              <strong>CATEGORIA:</strong>
+              <p>{book.category}</p>
 
-            <strong>VALOR:</strong>
-            <p>{Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(book.price)}</p>
+              <strong>VALOR:</strong>
+              <p>{Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(book.price)}</p>
 
-            <button onClick={e => handleDelete(book.id)}>
-              <FiTrash2 size={20} color="#a8a8b3" />
-            </button>
-          </li>
-        ))}
+              <button onClick={e => handleDelete(book.id)}>
+                <FiTrash2 size={20} color="#a8a8b3" />
+              </button>
+            </li>
+          ))
+        )}
       </ul>
     </div>
   );
