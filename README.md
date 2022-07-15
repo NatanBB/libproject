@@ -1,4 +1,4 @@
-# Libary Project
+# Library Project
 
 ![alt text](https://i.imgur.com/z6rpzs2.png)
 
