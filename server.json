@@ -4,13 +4,8 @@
       "id": 20074,
       "title": "A volta dos que não foram",
       "description": "Interdum posuere enim donec nunc lacinia lobortis, volutpat leo blandit libero per euismod dictumst, nullam ullamcorper etiam aliquam molestie. sit nunc mi donec eleifend neque ac risus, inceptos ultricies metus conubia suscipit ad augue non, ad nisi risus vehicula tincidunt odio",
-      "price": "99"
-    },
-    {
-      "id": 33426,
-      "title": "Harry Potter",
-      "description": "Um bruxo muito bruxo",
-      "price": "99"
+      "price": "99",
+      "category": "Ficção"
     }
   ],
   "usuarios": [
@@ -31,14 +26,17 @@
       "title": "A volta dos que não foram",
       "description": "Interdum posuere enim donec nunc lacinia lobortis, volutpat leo blandit libero per euismod dictumst, nullam ullamcorper etiam aliquam molestie. sit nunc mi donec eleifend neque ac risus, inceptos ultricies metus conubia suscipit ad augue non, ad nisi risus vehicula tincidunt odio",
       "price": "99",
-      "qtd": 5
+      "qtd": 3
+    }
+  ],
+  "category": [
+    {
+      "id": 1,
+      "name": "teste1"
     },
     {
-      "id": 33426,
-      "title": "Harry Potter",
-      "description": "Um bruxo muito bruxo",
-      "price": "99",
-      "qtd": 1
+      "id": 47707,
+      "name": "teseseses"
     }
   ]
 }

@@ -24,7 +24,7 @@ export default function Home() {
   }
 
   //#endregion
-  
+
   //#region navigation
   const history = useNavigate();
 
@@ -43,11 +43,12 @@ export default function Home() {
   return (
     <div className="profile-container">
       <header>
-        <img src={"https://i.imgur.com/dOF75ol.png"} alt="livrary" className="icon"/>
+        <img src={"https://i.imgur.com/dOF75ol.png"} alt="livrary" className="icon" />
         <span>Bem vindo, Admin!</span>
 
-        <Link className="button" to="/marketplace" style={{marginLeft: "80px"}}>Ir ao Marketplace</Link>
-        <Link className="button" to="/registration">Cadastrar novo livro</Link>
+        <Link className="button" to="/marketplace" style={{ marginLeft: "80px" }}>Ir ao Marketplace</Link>
+        <Link className="button" to="/registration" style={{ marginLeft: "10px" }}>Cadastrar novo livro</Link>
+        <Link className="button" to="/category" style={{ marginLeft: "10px" }}>Cadastrar caregoria</Link>
         <button onClick={handleLogout} type="button">
           <FiPower size={18} color="#E02041" />
         </button>
@@ -58,19 +59,22 @@ export default function Home() {
       <ul>
         {data.map(book => (
           <li key={book.id}>
-          <strong>LIVRO:</strong>
-          <p>{book.title}</p>
+            <strong>LIVRO:</strong>
+            <p>{book.title}</p>
 
-          <strong>DESCRIÇÃO:</strong>
-          <p>{book.description}</p>
+            <strong>DESCRIÇÃO:</strong>
+            <p>{book.description}</p>
 
-          <strong>VALOR:</strong>
-          <p>{Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(book.price)}</p>
+            <strong>CATEGORIA:</strong>
+            <p>{book.category}</p>
 
-          <button onClick={e => handleDelete(book.id)}>
-            <FiTrash2 size={20} color="#a8a8b3" />
-          </button>
-        </li>
+            <strong>VALOR:</strong>
+            <p>{Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(book.price)}</p>
+
+            <button onClick={e => handleDelete(book.id)}>
+              <FiTrash2 size={20} color="#a8a8b3" />
+            </button>
+          </li>
         ))}
       </ul>
     </div>

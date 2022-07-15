@@ -3,6 +3,7 @@ export type Book = {
   title: string;
   description: string;
   price: number;
+  category: string;
 }
 
 export type CartProps = {
@@ -11,4 +12,9 @@ export type CartProps = {
   description: string;
   price: number;
   qtd: number;
+}
+
+export type CategoryProps = {
+  id: number;
+  name: string;
 }

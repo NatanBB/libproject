@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { FiShoppingCart } from 'react-icons/fi';
+import { FiPower, FiShoppingCart } from 'react-icons/fi';
 import { Book } from '../Home/homeTypes';
 import { api } from '../../services/api';
 
@@ -41,6 +41,10 @@ export default function Marketplace() {
     handleData();
   }
 
+  const handleLogout = () => {
+    history("/")
+  }
+
   //#endregion
 
   return (
@@ -53,6 +57,9 @@ export default function Marketplace() {
         <button onClick={cartList} type="button">
           <FiShoppingCart size={18} color="black" />
         </button>
+        <button onClick={handleLogout} type="button">
+          <FiPower size={18} color="#E02041" />
+        </button>
       </header>
 
       <h1>Adicionar ao carrinho</h1>
@@ -64,6 +71,9 @@ export default function Marketplace() {
 
             <strong>DESCRIÇÃO:</strong>
             <p>{book.description}</p>
+
+            <strong>CATEGORIA:</strong>
+            <p>{book.category}</p>
 
             <strong>VALOR:</strong>
             <p>{Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(book.price)}</p>

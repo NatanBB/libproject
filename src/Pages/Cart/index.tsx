@@ -10,6 +10,16 @@ export default function Cart() {
 
   //#region data
   const [cart, setCart] = useState<CartProps[]>([]);
+  const total: any[] = [];
+  cart.forEach(item => {
+    total.push(item.qtd * item.price)
+  })
+
+  let sum = 0;
+
+  for (let i = 0; i < total.length; i++) {
+    sum += total[i];
+  }
 
   useEffect(() => {
     handleData();
@@ -40,10 +50,10 @@ export default function Cart() {
   }
 
   const handleRemoveQtd = async (item: CartProps) => {
-    if(item.qtd > 0){
+    if (item.qtd > 0) {
       const qtd = { qtd: item.qtd-- }
       await api.patch(`cart/${item.id}`, qtd)
-    } else if (item.qtd <= 0){
+    } else if (item.qtd <= 0) {
       await api.delete(`cart/${item.id}`)
     }
   }
@@ -78,7 +88,7 @@ export default function Cart() {
               <p>{item.qtd}</p>
               <div>
                 <FiPlus size={16} color="#088a0f" className={"buttons"} onClick={e => handleAddQtd(item)} />
-                <FiMinus size={16} color="red" className={"buttons"} onClick={e => handleRemoveQtd(item)}/>
+                <FiMinus size={16} color="red" className={"buttons"} onClick={e => handleRemoveQtd(item)} />
                 <FiTrash2 size={16} color="grey" className={"buttons"} onClick={e => handleDelete(item.id)} />
               </div>
               <p>$ {item.qtd * item.price}</p>
@@ -87,7 +97,7 @@ export default function Cart() {
           <div className={"header"}>
             <div></div>
           </div>
-          <h2>Total: R$ {99},00</h2>
+          <h2>{`Total: R$ ${sum}`}</h2>
         </div>
       </>
     </div>
