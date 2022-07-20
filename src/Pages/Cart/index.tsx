@@ -4,12 +4,15 @@ import './styles.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { FiMinus, FiPlus, FiPower, FiTrash2 } from 'react-icons/fi';
 import { api } from '../../services/api';
-import { CartProps } from '../Home/homeTypes';
+import { CartProps } from '../../globalTypes';
 
 export default function Cart() {
 
   //#region data
   const [cart, setCart] = useState<CartProps[]>([]);
+  const [update, setUpdate] = useState<Boolean>(false);
+  const [resp, setResp] = useState<Boolean>(false);
+
   const total: any[] = [];
   cart.forEach(item => {
     total.push(item.qtd * item.price)
@@ -25,7 +28,15 @@ export default function Cart() {
     handleData();
   }, [])
 
+  useEffect(() => {
+    if(update == true){
+      handleData();
+      setResp(false);
+    }
+  }, [update])
+
   const handleData = async () => {
+    setUpdate(false)
     const { data } = await api.get('cart');
     setCart(data);
   }
@@ -44,17 +55,26 @@ export default function Cart() {
     handleData();
   }
 
-  const handleAddQtd = async (item: CartProps) => {
+  const handleAddQtd = async (item: CartProps, e: React.MouseEvent<SVGElement, MouseEvent>) => {
+    e.preventDefault();
     const qtd = { qtd: item.qtd++ }
-    await api.patch(`cart/${item.id}`, qtd)
+    await api.patch(`cart/${item.id}`, qtd).then(res => setResp(true))
+    if(resp == true){
+      setUpdate(true)
+    }
   }
 
-  const handleRemoveQtd = async (item: CartProps) => {
+  const handleRemoveQtd = async (item: CartProps, e: React.MouseEvent<SVGElement, MouseEvent>) => {
+    e.preventDefault();
     if (item.qtd > 0) {
       const qtd = { qtd: item.qtd-- }
-      await api.patch(`cart/${item.id}`, qtd)
+      await api.patch(`cart/${item.id}`, qtd).then(res => setResp(true))
+      if(resp == true){
+        setUpdate(true)
+      }
     } else if (item.qtd <= 0) {
       await api.delete(`cart/${item.id}`)
+      handleData();
     }
   }
   //#endregion
@@ -75,11 +95,11 @@ export default function Cart() {
         <div className={"borderContainer"}>
           <h1>Seu carrinho</h1>
           <div className={"header"}>
-            <div>Product</div>
-            <div>Price</div>
-            <div>Quantity</div>
-            <div>Actions</div>
-            <div>Total Price</div>
+            <div>Produto</div>
+            <div>Preço</div>
+            <div>Quantidade</div>
+            <div>Ações</div>
+            <div>Preço Total</div>
           </div>
           {cart.map(item => (
             <div className={"body"}>
@@ -87,8 +107,8 @@ export default function Cart() {
               <p>R$ {item.price}</p>
               <p>{item.qtd}</p>
               <div>
-                <FiPlus size={16} color="#088a0f" className={"buttons"} onClick={e => handleAddQtd(item)} />
-                <FiMinus size={16} color="red" className={"buttons"} onClick={e => handleRemoveQtd(item)} />
+                <FiPlus size={16} color="#088a0f" className={"buttons"} onClick={e => handleAddQtd(item, e)} />
+                <FiMinus size={16} color="red" className={"buttons"} onClick={e => handleRemoveQtd(item, e)} />
                 <FiTrash2 size={16} color="grey" className={"buttons"} onClick={e => handleDelete(item.id)} />
               </div>
               <p>$ {item.qtd * item.price}</p>

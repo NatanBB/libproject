@@ -6,7 +6,7 @@ import './styles.css';
 import { useState } from 'react';
 import { api } from '../../services/api';
 import { useEffect } from 'react';
-import { Book } from './homeTypes';
+import { Book } from '../../globalTypes';
 // import { toastr } from 'react-redux-toastr'
 
 export default function Home() {

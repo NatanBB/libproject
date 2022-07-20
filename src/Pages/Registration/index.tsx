@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi'
 import Select from 'react-select';
-import { CategoryProps } from '../Home/homeTypes';
+import { CategoryProps } from '../../globalTypes';
 
 import './styles.css';
 import { api } from '../../services/api';

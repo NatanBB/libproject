@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FiFileText, FiPower, FiShoppingCart } from 'react-icons/fi';
-import { Book, UserProps } from '../Home/homeTypes';
+import { Book, UserProps } from '../../globalTypes';
 import { api } from '../../services/api';
 
 export default function Marketplace() {
