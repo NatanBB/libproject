@@ -15,6 +15,10 @@
 #### --Server :globe_with_meridians:
 * npm run server
 
+# Tutorial
+
+https://youtu.be/buJ1oijiH5E
+
 # !Important
 
 Admin login:
