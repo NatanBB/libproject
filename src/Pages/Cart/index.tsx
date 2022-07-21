@@ -57,8 +57,10 @@ export default function Cart() {
 
   const handleAddQtd = async (item: CartProps, e: React.MouseEvent<SVGElement, MouseEvent>) => {
     e.preventDefault();
-    const qtd = { qtd: item.qtd++ }
-    await api.patch(`cart/${item.id}`, qtd).then(res => setResp(true))
+    item.qtd++
+    const qtd = { qtd: item.qtd }
+    await api.patch(`cart/${item.id}`, qtd)
+    setResp(true)
     if(resp == true){
       setUpdate(true)
     }
@@ -67,7 +69,8 @@ export default function Cart() {
   const handleRemoveQtd = async (item: CartProps, e: React.MouseEvent<SVGElement, MouseEvent>) => {
     e.preventDefault();
     if (item.qtd > 0) {
-      const qtd = { qtd: item.qtd-- }
+      item.qtd--
+      const qtd = { qtd: item.qtd }
       await api.patch(`cart/${item.id}`, qtd).then(res => setResp(true))
       if(resp == true){
         setUpdate(true)

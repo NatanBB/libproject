@@ -15,17 +15,17 @@
       "category": "Ação"
     },
     {
-      "id": 64650,
-      "title": "Amor a primeira vista",
-      "description": "Interdum posuere enim donec nunc lacinia lobortis, volutpat leo blandit libero per euismod dictumst, nullam ullamcorper etiam aliquam molestie. sit nunc mi donec eleifend neque ac risus, inceptos ultricies metus conubia suscipit ad augue non, ad nisi risus vehicula tincidunt odio",
-      "price": "78",
-      "category": "Romance"
+      "id": 16578,
+      "title": "Teste",
+      "description": "asdasdada",
+      "price": "50",
+      "category": "Carros"
     }
   ],
   "userLog": [
     {
       "id": 1,
-      "username": "admin"
+      "username": "natan"
     }
   ],
   "cart": [
@@ -34,7 +34,7 @@
       "title": "A volta dos que não foram",
       "description": "Interdum posuere enim donec nunc lacinia lobortis, volutpat leo blandit libero per euismod dictumst, nullam ullamcorper etiam aliquam molestie. sit nunc mi donec eleifend neque ac risus, inceptos ultricies metus conubia suscipit ad augue non, ad nisi risus vehicula tincidunt odio",
       "price": "99",
-      "qtd": 5
+      "qtd": 1
     }
   ],
   "category": [
@@ -53,6 +53,10 @@
     {
       "id": 26138,
       "name": "Ficção"
+    },
+    {
+      "id": 57400,
+      "name": "Carros"
     }
   ]
 }
